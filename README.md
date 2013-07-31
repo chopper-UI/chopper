@@ -14,17 +14,14 @@ Chopper
     *   [代码注释规范](#note)
     *   [组件规范](#component)
         *    [构建](component-structure)
-        *    [维护](component-maintain)
-        *    [升级](component-upgrade)
+        *    [维护与升级](component-maintain)
 *   [感谢](#acknowledgement)
 
 <h2 id="overview">概述</h2>
 
 <h3 id="background">背景</h3>
 
-Chopper是theCN.com的一套样式解决方案。在CN V3版本第二次进行样式更新时，愈发的感觉到样式模块化的价值和意义重大，因此基于原有的样式表进行重构，参考国内外几大CSS框架进行自己的样式框架化构建。
-
-因为源码是基于原有的样式表，因此存在一些历史遗留的问题。这部分代码将在接下来被修正。
+Chopper是theCN.com的一套样式解决方案。在CN V3版本第二次进行样式更新时，愈发的感觉到样式模块化的价值和意义重大，因此基于原有的样式表进行重构产生了此套解决方案。
 
 <h2 id="standard">规范</h2>
 
@@ -144,27 +141,60 @@ __代码注释：__
 
 如何开发一个新的组件？
 
-首先确保你已经安装了node.js, npm, [spm](https://github.com/spmjs/spm/wiki)（前端包管理工具）, [nico](http://lab.lepture.com/nico/zh/)（静态文档生成工具）.
+首先确保你已经安装了node.js, npm
 
 ```shell
-#安装chopper初始化工具
+#安装chopper初始化工具（安装完成后就可以通过命令 spm init chopper 直接生成组件包）
 curl https://raw.github.com/chopper-UI/spm-init/master/boot.sh | sh
 
-#安装chopper theme(用于生成文档)
+#安装chopper nico theme(用于写完组件后生成可视化文档)
 curl https://raw.github.com/chopper-UI/spm-theme/master/boot.sh | sh
 
-#新建一个组件
-mkdir box
-spm init chopper
-cd src
-vim box.css
+#新建一个组件（以新建box组件为例）
+#在新建组件前，请确保在https://raw.github.com/chopper-UI建立了该组件的仓库，如https://raw.github.com/chopper-UI/box
+
+mkdir box 
+cd box
+spm init chopper #运行命令后需要你输入组件的相关信息，输完后将会生成一个chopper标准化文件夹
+cd src #该目录下放置的是组件对应的css文件
+vim box.css #开始编程。。。
+
+# 可以边写css代码边调试
 cd ..
 vim README.md
+make watch
+#然后在浏览器打开127.0.0.1:8000即可见到read.md内写的示例代码生成的效果
+
+#完成组件后，写一个sublime的snippet
+cd sublime-snippet
+vim box.sublime-snippet
 
 #构建
-make build-doc
+make build
 
 #发布：目前这一步还得手动，节操尽失。
+git add .
+git commit -a
+git pull
+git push
+```
+
+<h4 id="component-maintain">维护与升级</div>
+
+维护与升级组件是日常必要的工作。每个成员都可以拉下仓库代码进行修改然后更新仓库，告知chopper负责人。
+
+但是thecn.com上的css文件是只有前端负责人有权限更新。
+
+平常更新chopper组件仓库的基本步骤：
+```shell
+git pull
+# do some change
+vim HISTORY.md #添加修改的历史记录
+vim package.json #更新版本号
+git add .
+git commit -a
+git pull
+git push
 ```
 
 <h2 id="acknowledgement">感谢</h2>
