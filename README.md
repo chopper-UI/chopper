@@ -1,4 +1,4 @@
-Chopper
+Chopper UI
 ==================
 
 简单易用的前端样式解决方案。
@@ -25,11 +25,12 @@ Chopper
 Chopper是theCN.com的一套样式解决方案。在CN V3版本第二次进行样式更新时，愈发的感觉到样式模块化的价值和意义重大，因此基于原有的样式表进行重构产生了此套解决方案。
 
 <h3 id="compatible">兼容</h3>
-- [x] IE 8+
-- [x] Chrome 
-- [x] Opera
-- [x] Safari
-- [x] Firefox 3.6+
+
+- IE 8+
+- Chrome 
+- Opera
+- Safari
+- Firefox 
 
 <h2 id="standard">规范</h2>
 
