@@ -152,13 +152,34 @@ __代码注释：__
 
 首先确保你已经安装了node.js, npm
 
+##### 安装 spm
+
+`$ npm install spm -g`
+
+安装 spm-build、spm-init、spm-deploy、spm-doc 等插件。
+
+```shell
+$ npm install spm-build -g
+$ npm install spm-init -g
+$ npm install spm-deploy -g
+$ npm install spm-doc -g
+```
+
+安装chopper模板
+
 ```shell
 #安装chopper初始化工具（安装完成后就可以通过命令 spm init chopper 直接生成组件包）
 curl https://raw.github.com/chopper-UI/spm-init/master/boot.sh | sh
+```
 
+安装chopper对应的[Nico](http://lab.lepture.com/nico/)主题
+
+```shell
 #安装chopper nico theme(用于写完组件后生成可视化文档)
 curl https://raw.github.com/chopper-UI/spm-theme/master/boot.sh | sh
+```
 
+```shell
 #新建一个组件（以新建box组件为例）
 #在新建组件前，请确保在https://raw.github.com/chopper-UI建立了该组件的仓库，
 #如https://raw.github.com/chopper-UI/box
