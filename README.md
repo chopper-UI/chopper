@@ -160,7 +160,8 @@ curl https://raw.github.com/chopper-UI/spm-init/master/boot.sh | sh
 curl https://raw.github.com/chopper-UI/spm-theme/master/boot.sh | sh
 
 #新建一个组件（以新建box组件为例）
-#在新建组件前，请确保在https://raw.github.com/chopper-UI建立了该组件的仓库，如https://raw.github.com/chopper-UI/box
+#在新建组件前，请确保在https://raw.github.com/chopper-UI建立了该组件的仓库，
+#如https://raw.github.com/chopper-UI/box
 
 mkdir box 
 cd box
